@@ -1,0 +1,126 @@
+// 
+// Decompiled by Procyon v0.6-prerelease
+// 
+
+package twilightforest.client;
+
+import net.minecraft.client.renderer.RenderTypeLookup;
+import twilightforest.block.TFBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderType;
+
+public class RenderLayerRegistration
+{
+    public static void init() {
+        final RenderType cutoutMipped = RenderType.func_228641_d_();
+        final RenderType cutout = RenderType.func_228643_e_();
+        final RenderType translucent = RenderType.func_228645_f_();
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.oak_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.rainboak_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.canopy_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mangrove_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.time_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.transformation_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mining_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.sorting_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.time_door.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.sort_door.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.time_trapdoor.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.sort_trapdoor.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.twilight_portal.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.auroralized_glass.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.thorn_rose.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.fiery_block.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.thorn_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.beanstalk_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.giant_leaves.get(), cutoutMipped);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.experiment_115.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.wispy_cloud.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.uberous_soil.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.trollvidr.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.unripe_trollber.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.trollber.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.huge_lilypad.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.huge_waterlily.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_rune_brick_yellow.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_rune_brick_purple.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_rune_brick_pink.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_rune_brick_blue.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_door_yellow.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_door_purple.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_door_pink.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.castle_door_blue.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.green_thorns.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.brown_thorns.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.burnt_thorns.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.twilight_portal_miniature_structure.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.naga_courtyard_miniature_structure.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.lich_tower_miniature_structure.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.trophy_pedestal.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.stone_twist_thin.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.fiery_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.firefly_jar.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.cicada_jar.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.moss_patch.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mayapple.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.clover_patch.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.fiddlehead.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mushgloom.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.torchberry_plant.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.root_strand.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.fallen_leaves.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.uncrafting_table.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.encased_smoker.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.encased_fire_jet.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.oak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.rainboak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.canopy_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mangrove_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.darkwood_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.hollow_oak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.time_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.transformation_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.mining_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.sorting_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.built_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.antibuilt_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.reactor_debris.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.force_field_pink.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.force_field_blue.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.force_field_green.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.force_field_purple.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.force_field_orange.get(), translucent);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_naga.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_lich.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_hydra.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_ur_ghast.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_knight_phantom.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_snow_queen.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_minoshroom.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_alpha_yeti.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.boss_spawner_final_boss.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.reappearing_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.locked_vanishing_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.vanishing_block.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.carminite_builder.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.antibuilder.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.carminite_reactor.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.ghast_trap.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_twilight_oak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_canopy_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_mangrove_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_darkwood_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_hollow_oak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_rainboak_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_time_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_trans_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_mine_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_sort_sapling.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_mayapple.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_fiddlehead.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_mushgloom.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_thorn.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_green_thorn.get(), cutout);
+        RenderTypeLookup.setRenderLayer((Block)TFBlocks.potted_dead_thorn.get(), cutout);
+    }
+}
