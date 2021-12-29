@@ -1,0 +1,158 @@
+// 
+// Decompiled by Procyon v0.6-prerelease
+// 
+
+package twilightforest.client.renderer;
+
+import net.minecraft.entity.Entity;
+import org.lwjgl.opengl.GL11;
+import twilightforest.tileentity.TileEntityTFTrophy;
+import net.minecraft.tileentity.TileEntity;
+import twilightforest.client.model.ModelTFSnowQueen;
+import twilightforest.client.model.ModelTFTowerBoss;
+import twilightforest.client.model.ModelTFLich;
+import twilightforest.client.model.ModelTFNaga;
+import net.minecraft.util.ResourceLocation;
+import twilightforest.client.model.ModelTFHydraHead;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+
+public class TileEntityTFTrophyRenderer extends TileEntitySpecialRenderer
+{
+    private ModelTFHydraHead hydraHeadModel;
+    private static final ResourceLocation textureLocHydra;
+    private ModelTFNaga nagaHeadModel;
+    private static final ResourceLocation textureLocNaga;
+    private ModelTFLich lichModel;
+    private static final ResourceLocation textureLocLich;
+    private ModelTFTowerBoss urGhastModel;
+    private static final ResourceLocation textureLocUrGhast;
+    private ModelTFSnowQueen snowQueenModel;
+    private static final ResourceLocation textureLocSnowQueen;
+    
+    public TileEntityTFTrophyRenderer() {
+        this.hydraHeadModel = new ModelTFHydraHead();
+        this.nagaHeadModel = new ModelTFNaga();
+        this.lichModel = new ModelTFLich();
+        this.urGhastModel = new ModelTFTowerBoss();
+        this.snowQueenModel = new ModelTFSnowQueen();
+    }
+    
+    public void func_147500_a(final TileEntity tileentity, final double x, final double y, final double z, final float partialTime) {
+        final TileEntityTFTrophy trophy = (TileEntityTFTrophy)tileentity;
+        GL11.glPushMatrix();
+        GL11.glDisable(2884);
+        final int meta = trophy.func_145832_p() & 0x7;
+        float rotation = trophy.func_145906_b() * 360 / 16.0f;
+        boolean onGround = true;
+        if (meta != 1) {
+            switch (meta) {
+                case 2: {
+                    onGround = false;
+                    break;
+                }
+                case 3: {
+                    onGround = false;
+                    rotation = 180.0f;
+                    break;
+                }
+                case 4: {
+                    onGround = false;
+                    rotation = 270.0f;
+                    break;
+                }
+                default: {
+                    onGround = false;
+                    rotation = 90.0f;
+                    break;
+                }
+            }
+        }
+        GL11.glTranslatef((float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f);
+        switch (trophy.func_145904_a()) {
+            case 0: {
+                this.renderHydraHead(rotation, onGround);
+                break;
+            }
+            case 1: {
+                this.renderNagaHead(rotation, onGround);
+                break;
+            }
+            case 2: {
+                this.renderLichHead(rotation, onGround);
+                break;
+            }
+            case 3: {
+                this.renderUrGhastHead(trophy, rotation, onGround, partialTime);
+                break;
+            }
+            case 4: {
+                this.renderSnowQueenHead(rotation, onGround);
+                break;
+            }
+        }
+        GL11.glPopMatrix();
+    }
+    
+    private void renderHydraHead(final float rotation, final boolean onGround) {
+        GL11.glScalef(0.25f, 0.25f, 0.25f);
+        this.func_147499_a(TileEntityTFTrophyRenderer.textureLocHydra);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        GL11.glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+        GL11.glTranslatef(0.0f, onGround ? 1.0f : -0.0f, 1.5f);
+        this.hydraHeadModel.openMouthForTrophy(onGround ? 0.0f : 0.25f);
+        this.hydraHeadModel.func_78088_a(null, 0.0f, 0.0f, 0.0f, rotation, 0.0f, 0.0625f);
+    }
+    
+    private void renderNagaHead(final float rotation, final boolean onGround) {
+        GL11.glTranslatef(0.0f, -0.125f, 0.0f);
+        GL11.glScalef(0.25f, 0.25f, 0.25f);
+        this.func_147499_a(TileEntityTFTrophyRenderer.textureLocNaga);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        GL11.glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+        GL11.glTranslatef(0.0f, onGround ? 1.0f : -0.0f, onGround ? 0.0f : 1.0f);
+        this.nagaHeadModel.func_78088_a(null, 0.0f, 0.0f, 0.0f, rotation, 0.0f, 0.0625f);
+    }
+    
+    private void renderLichHead(final float rotation, final boolean onGround) {
+        GL11.glTranslatef(0.0f, 1.0f, 0.0f);
+        this.func_147499_a(TileEntityTFTrophyRenderer.textureLocLich);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        GL11.glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+        GL11.glTranslatef(0.0f, onGround ? 1.75f : 1.5f, onGround ? 0.0f : 0.24f);
+        this.lichModel.field_78116_c.func_78785_a(0.0625f);
+        this.lichModel.field_78114_d.func_78785_a(0.0625f);
+    }
+    
+    private void renderUrGhastHead(final TileEntityTFTrophy trophy, final float rotation, final boolean onGround, final float partialTime) {
+        GL11.glTranslatef(0.0f, 1.0f, 0.0f);
+        GL11.glScalef(0.5f, 0.5f, 0.5f);
+        this.func_147499_a(TileEntityTFTrophyRenderer.textureLocUrGhast);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        GL11.glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+        GL11.glTranslatef(0.0f, onGround ? 1.0f : 1.0f, onGround ? 0.0f : 0.0f);
+        this.urGhastModel.func_78088_a(null, 0.0f, 0.0f, trophy.ticksExisted + partialTime, 0.0f, 0.0f, 0.0625f);
+    }
+    
+    private void renderSnowQueenHead(final float rotation, final boolean onGround) {
+        GL11.glTranslatef(0.0f, 1.0f, 0.0f);
+        this.func_147499_a(TileEntityTFTrophyRenderer.textureLocSnowQueen);
+        GL11.glScalef(1.0f, -1.0f, -1.0f);
+        GL11.glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+        GL11.glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+        GL11.glTranslatef(0.0f, onGround ? 1.5f : 1.25f, onGround ? 0.0f : 0.24f);
+        this.snowQueenModel.field_78116_c.func_78785_a(0.0625f);
+        this.snowQueenModel.field_78114_d.func_78785_a(0.0625f);
+    }
+    
+    static {
+        textureLocHydra = new ResourceLocation("twilightforest:textures/model/hydra4.png");
+        textureLocNaga = new ResourceLocation("twilightforest:textures/model/nagahead.png");
+        textureLocLich = new ResourceLocation("twilightforest:textures/model/twilightlich64.png");
+        textureLocUrGhast = new ResourceLocation("twilightforest:textures/model/towerboss.png");
+        textureLocSnowQueen = new ResourceLocation("twilightforest:textures/model/snowqueen.png");
+    }
+}
